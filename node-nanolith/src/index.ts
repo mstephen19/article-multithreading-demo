@@ -3,7 +3,7 @@ import { api } from './worker.js';
 // Run the "work" function 10 times.
 console.time('Workflow');
 
-// Create an array to store the promises generated
+// Create an array to store promises generated
 // by each multithreaded operation.
 const promises: Promise<void>[] = [];
 
@@ -13,7 +13,7 @@ for (let i = 0; i <= 10; i++) {
     promises.push(api({ name: 'work' }));
 }
 
-// Wait for all of the operations to finish.
+// Wait for all of the operations to complete.
 await Promise.all(promises);
 
 console.timeEnd('Workflow');

@@ -3,8 +3,9 @@
 import { define } from 'nanolith';
 
 // Create and export a variable with a name of your choice
-// that points to the value returned by defining your tasks.
+// that points to the awaited result of defining your tasks.
 export const api = await define({
+    // Define the work function inside of the object.
     work() {
         sleepSync(2_000);
     },
