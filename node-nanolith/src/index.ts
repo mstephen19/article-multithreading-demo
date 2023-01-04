@@ -1,6 +1,6 @@
+// Import the definitions we created before.
 import { api } from './worker.js';
 
-// Run the "work" function 10 times.
 console.time('Workflow');
 
 // Create an array to store promises generated
@@ -8,9 +8,11 @@ console.time('Workflow');
 const promises: Promise<void>[] = [];
 
 for (let i = 0; i <= 10; i++) {
-    // Each time, call the "work" function as a multithreaded
-    // operation and add the promise to the "promises" array.
-    promises.push(api({ name: 'work' }));
+    // Use the "api" as a function to call the
+    // task as a multithreaded operation.
+    const promise = api({ name: 'work' });
+    // Add the task's promise to the array.
+    promises.push(promise);
 }
 
 // Wait for all of the operations to complete.

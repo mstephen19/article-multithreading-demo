@@ -5,7 +5,8 @@
     "main": "dist/index.js",
     "license": "MIT",
     "scripts": {
-        "start": "tsc && node dist/index.js"
+        "start": "tsc && node dist/index.js",
+        "test-blocking": "tsc && node dist/test_blocking.js"
     },
     "devDependencies": {
         "typescript": "^4.9.4"

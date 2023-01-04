@@ -12,11 +12,12 @@ function work() {
     sleepSync(2_000);
 }
 
-// Run the "work" function 10 times.
-console.time('Workflow');
-
-for (let i = 0; i <= 10; i++) {
-    work();
+function doWork() {
+    for (let i = 0; i <= 10; i++) {
+        work();
+    }
+    console.log('Workflow finished.');
 }
 
-console.timeEnd('Workflow');
+doWork();
+console.log('Hello world!');

@@ -17,5 +17,4 @@ function sleepSync(milliseconds: number) {
     const start = Date.now();
     const expire = start + milliseconds;
     while (Date.now() < expire) {}
-    return;
 }
